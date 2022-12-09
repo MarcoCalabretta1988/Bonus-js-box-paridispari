@@ -14,7 +14,7 @@ const resetBtn = document.getElementById('reset-btn');
 
 // GENERATE BUTTON EVENT
 getBtn.addEventListener ('click' , function(){
-    printArea.classList.remove('d-none');
+    
 
     const min = parseInt(numeroMin.value.trim());
     const max = parseInt(numeroMax.value.trim());
@@ -33,10 +33,11 @@ getBtn.addEventListener ('click' , function(){
         alert ('Il valore minimo non può essere maggiore del massimo');
     }
     else{
+        printArea.classList.remove('d-none');
         let content = '';
         for (let i = 0; i < index ; i++){
             content += `<div class=\"col-4\"> <div class=\"m-3 rounded py-3`;
-            const randValue = Math.floor(Math.random() * ( max - min) + min);
+            const randValue = Math.floor(Math.random() * ( max +1 - min) + min);
             if ( randValue % 2 === 0){
                 content += ` bg-success`;
             }
